@@ -14,7 +14,7 @@ public class SimpleStrategy implements SolverStrategy {
 
     @Override
     public String getNextGuess(List<String> validWords, String feedback) {
-        validWords.removeIf(String::isBlank); // Quita la palabra vacía de la lista
+        validWords.removeIf(String::isBlank);
         if (validWords.isEmpty()) {
             throw new IllegalStateException("No hay palabras que acepten todas las condiciones");
         }
@@ -70,9 +70,16 @@ public class SimpleStrategy implements SolverStrategy {
 
     private List<String> getValidWords(List<String> words, String feedback, String lastGuess) {
         List<String> validWords = new ArrayList<>(words);
+        List<Character> validCharacters = new ArrayList<>();
 
         if (lastGuess.length() < feedback.length()) {
             throw new IllegalArgumentException("Error en la longitud de la palabra");
+        }
+
+        for (int i = 0; i < feedback.length(); i++) { // Arreglo de bug para no eliminar palabras que contengan la misma letra en 2 posiciones pero en una aparece en gris y otra en verde
+            if (feedback.charAt(i) == CORRECT) {
+                validCharacters.add(lastGuess.charAt(i));
+            }
         }
 
         for (int i = 0; i < feedback.length(); i++) {
@@ -83,7 +90,9 @@ public class SimpleStrategy implements SolverStrategy {
             if (feedbackChar == CORRECT) {
                 validWords.removeIf(word -> word.length() > I && word.charAt(I) != guessChar);
             } else if (feedbackChar == INCORRECT) {
-                validWords.removeIf(word -> word.contains(String.valueOf(guessChar)));
+                if (!validCharacters.contains(guessChar)) {
+                    validWords.removeIf(word -> word.contains(String.valueOf(guessChar)));
+                }
             } else if (feedbackChar == CONTAINS) {
                 validWords.removeIf(word -> {
                     if (word.charAt(I) == guessChar) {
