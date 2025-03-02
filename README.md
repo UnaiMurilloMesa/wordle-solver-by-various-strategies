@@ -9,8 +9,8 @@ día a día de todo programador, como por ejemplo el patrón Strategy.
   - Estrategia óptima: (todavía no implementada)
 
 ## Instalación y uso
-1 _ Clona el repositorio en tu IDE favorito
-2 _ Compila el programa (SDK utilizado: Amazon Corretto 21.0.3)
-3 _ Entra en la clase Main y ejecuta el programa a la vez que el juego "La palabra de día" -> https://lapalabradeldia.com/
-4 _ Escoge la estrategia que quieras utilizar, pero ten en cuenta que la estrategia aleatoria es, como dice su nombre, MUY aleatoria
-5 _ En las demás estrategias habrá que introducir un feedback ("v" si esa posición tiene color verde, "g" si esa posición tiene color gris y "a" si esa posición tiene color amarillo)
+ - Clona el repositorio en tu IDE favorito
+ - Compila el programa (SDK utilizado: Amazon Corretto 21.0.3)
+ - Entra en la clase Main y ejecuta el programa a la vez que el juego "La palabra de día" -> https://lapalabradeldia.com/
+ - Escoge la estrategia que quieras utilizar, pero ten en cuenta que la estrategia aleatoria es, como dice su nombre, MUY aleatoria
+ - En las demás estrategias habrá que introducir un feedback ("v" si esa posición tiene color verde, "g" si esa posición tiene color gris y "a" si esa posición tiene color amarillo)
