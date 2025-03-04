@@ -5,7 +5,7 @@ día a día de todo programador, como por ejemplo el patrón Strategy.
 
 ## Estrategias utilizadas
   - Estrategía aleatoria: Escoge palabras aleatorias entre todas las opciones, sin tener en cuenta ningún feedback, lo que la hace la menos óptima, pero la más divertida si acierta en algún caso.
-  - Estrategia simple: Esta representa la manera más humana de pensar. Comienza con la lista completa de todas las palabras y a lo largo que vamos acertando letras, se van reduciendo las opciones válidas.
+  - Estrategia simple: Esta representa la manera más "humana" de pensar. Comienza con la lista completa de todas las palabras y a lo largo que vamos acertando letras, se van reduciendo las opciones válidas. Tal y como los humanos haríamos, en esta estrategia, por cada prueba, se intentaría probar con el mayor número de letras posibles, por ello las palabras con letras repetidas se intentan evitar en todos los casos posibles (por ejemplo "perro" que tiene doble "r" o "tallo" que tiene doble "l").
   - Estrategia óptima: (todavía no implementada)
 
 ## Instalación y uso
