@@ -15,11 +15,22 @@ public class SimpleStrategy implements SolverStrategy {
     @Override
     public String getNextGuess(List<String> validWords, String feedback) {
         validWords.removeIf(String::isBlank);
+        String validWord = validWords.get(random.nextInt(validWords.size()));
+        int maxCount = validWords.size();
+        int actualCount = 0;
         if (validWords.isEmpty()) {
             throw new IllegalStateException("No hay palabras que acepten todas las condiciones");
         }
         System.out.println(validWords.size() + " palabras");
-        return validWords.get(random.nextInt(validWords.size()));
+
+        if (hasRepeatedLetters(validWord)) {
+            while (hasRepeatedLetters(validWord) && actualCount < maxCount) {
+                validWord = validWords.get(random.nextInt(validWords.size()));
+                actualCount++;
+            }
+        }
+
+        return validWord;
     }
 
     @Override
@@ -106,5 +117,18 @@ public class SimpleStrategy implements SolverStrategy {
         validWords.stream().forEach(System.out::println);
 
         return validWords;
+    }
+
+    private boolean hasRepeatedLetters(String word) {
+        boolean repeated = false;
+        for (int i = 0; i < word.length(); i++) {
+            Character actualChar = word.charAt(i);
+            for (int j = i + 1; j < word.length(); j++) {
+                if (actualChar.equals(word.charAt(j))) {
+                    repeated = true;
+                }
+            }
+        }
+        return repeated;
     }
 }
