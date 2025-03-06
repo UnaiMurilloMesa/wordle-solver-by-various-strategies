@@ -15,6 +15,9 @@ public class Main {
         WordleDictionaryJSON wordleDictionaryJSON = new WordleDictionaryJSON("src/main/resources/palabras5Letras.json");
         WordleDictionaryTXT wordleDictionaryTXT = new WordleDictionaryTXT("src/main/resources/words-en.txt");
 
+        // Añadir una interfaz para los dos Diccionarios y que dependiendo del idioma que quieras utilizar puedas
+        // instanciar un diccionario u otro
+        
         int option;
 
         do {

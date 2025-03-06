@@ -87,7 +87,7 @@ public class SimpleStrategy implements SolverStrategy {
             throw new IllegalArgumentException("Error en la longitud de la palabra");
         }
 
-        for (int i = 0; i < feedback.length(); i++) { // Arreglo de bug para no eliminar palabras que contengan la misma letra en 2 posiciones pero en una aparece en gris y otra en verde
+        for (int i = 0; i < feedback.length(); i++) { // Mejora para no eliminar palabras que contengan la misma letra en 2 posiciones pero en una aparece en gris y otra en verde
             if (feedback.charAt(i) == CORRECT) {
                 validCharacters.add(lastGuess.charAt(i));
             }
