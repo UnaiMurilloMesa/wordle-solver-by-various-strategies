@@ -10,16 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class WordleDictionary {
+public class WordleDictionaryJSON {
     private List<String> words;
 
 
-    public WordleDictionary(String path) {
+    public WordleDictionaryJSON(String path) {
         this.words = new ArrayList<>();
-        loadWordsFromJson(path);
+        loadWords(path);
     }
 
-    private void loadWordsFromJson(String path) {
+    private void loadWords(String path) {
         try {
             String content = new String(Files.readAllBytes(Paths.get(path)));
             JSONArray jsonArray = new JSONArray(new JSONTokener(content));
