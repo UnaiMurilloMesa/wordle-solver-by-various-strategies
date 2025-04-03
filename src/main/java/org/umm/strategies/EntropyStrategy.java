@@ -3,7 +3,6 @@ package org.umm.strategies;
 import java.util.*;
 
 public class EntropyStrategy implements SolverStrategy {
-    private Random random = new Random();
     private final Character CORRECT = 'v';
     private final Character INCORRECT = 'g';
     private final Character CONTAINS = 'a';
@@ -109,7 +108,7 @@ public class EntropyStrategy implements SolverStrategy {
         } while (!correct && attempts < 6);
 
         if (correct) {
-            System.out.println("¡Has acertado!");
+            System.out.println("Oleeee!!!");
         } else {
             System.out.println("Otra vez será...");
         }
@@ -134,7 +133,7 @@ public class EntropyStrategy implements SolverStrategy {
         return validWords;
     }
 
-    private List<String> filterValidWords(List<String> words) {
+    private List<String> filterValidWords(List<String> words) { // Por si hubiese palabras no válidas en el json
         List<String> filteredWords = new ArrayList<>();
         for (String word : words) {
             if (word.length() == WORD_LENGTH) {
