@@ -17,10 +17,10 @@ public class MainMenu implements MenuHandler {
         System.out.println();
         System.out.println("---- Wordle Solver ----");
         System.out.println("Escoge la estrategia para el solver");
-        System.out.println(" 0 _ Utilizar estrategia de escoger palabras aleatorias");
-        System.out.println(" 1 _ Utilizar estrategia simple");
-        System.out.println(" 2 _ Utilizar estrategia óptima");
-        System.out.println(" 3 _ Salir del programa");
+        System.out.println(" 0 _ Palabras aleatorias");
+        System.out.println(" 1 _ Estrategia simple");
+        System.out.println(" 2 _ Estrategia entropía");
+        System.out.println(" 3 _ Salir");
         System.out.print("Elige la opción: ");
     }
 

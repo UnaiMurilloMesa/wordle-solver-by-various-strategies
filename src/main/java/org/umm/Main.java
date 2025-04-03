@@ -13,7 +13,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         MenuHandler menuHandler = new MainMenu(sc);
         WordleDictionaryJSON wordleDictionaryJSON = new WordleDictionaryJSON("src/main/resources/palabras5Letras.json");
-        WordleDictionaryTXT wordleDictionaryTXT = new WordleDictionaryTXT("src/main/resources/words-en.txt");
 
         int option;
 
