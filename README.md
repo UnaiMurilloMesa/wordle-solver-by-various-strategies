@@ -1,16 +1,37 @@
-# Solucionador de Wordle para las palabras en español - Varias estrategias para solucionarlo
-Este programa implementa varias estrategias para solucionar el conocido juego "Wordle" o en español "La palabra del día".
-Lo más importante de este proyecto es mantener un código limpio, extensible, desacoplado y modular, por lo que se siguen los principios SOLID y se aplican patrones de diseño útiles en el 
-día a día de todo programador, como por ejemplo el patrón Strategy.
+# Wordle Solver for Spanish Words — Multiple Solving Strategies
 
-## Estrategias utilizadas
-  - Estrategia aleatoria: Escoge palabras aleatorias entre todas las opciones, sin tener en cuenta ningún feedback, lo que la hace la menos óptima, pero la más divertida si acierta en algún caso.
-  - Estrategia simple: Esta representa la manera más "humana" de pensar. Comienza con la lista completa de todas las palabras y a lo largo que vamos acertando letras, se van reduciendo las opciones válidas. Tal y como los humanos haríamos, en esta estrategia, por cada prueba, se intentaría probar con el mayor número de letras posibles, por ello las palabras con letras repetidas se intentan evitar en todos los casos posibles (por ejemplo "perro" que tiene doble "r" o "tallo" que tiene doble "l").
-  - Estrategia óptima: (todavía no implementada)
+This project implements several strategies to solve the popular game "Wordle" (in Spanish: *La Palabra del Día*).
 
-## Instalación y uso
- - Clona el repositorio en tu IDE favorito
- - Compila el programa (SDK utilizado: Amazon Corretto 21.0.3)
- - Entra en la clase Main y ejecuta el programa a la vez que el juego "La palabra de día" -> https://lapalabradeldia.com/
- - Escoge la estrategia que quieras utilizar, pero ten en cuenta que la estrategia aleatoria es, como dice su nombre, MUY aleatoria
- - En las demás estrategias habrá que introducir un feedback ("v" si esa posición tiene color verde, "g" si esa posición tiene color gris y "a" si esa posición tiene color amarillo)
+The main goal is to keep the code clean, modular, extensible, and decoupled by applying **SOLID principles** and useful **design patterns**, such as the **Strategy Pattern**.
+
+---
+
+## 🧠 Strategies
+
+- **Random Strategy**  
+  Picks random words from the full word list without using any feedback. It’s not effective, but it can be fun if it happens to guess correctly early on.
+
+- **Human-like Strategy**  
+  Simulates how a person would play. Starts with all possible words and narrows them down based on the feedback (correct/incorrect letters). Prioritizes words with unique letters to maximize information gained.
+
+- **Entropy-based Strategy** *(in progress)*  
+  A more mathematical approach aimed at maximizing information through entropy. Likely to be the most optimal, although further improvements could still be made.
+
+---
+
+## 🚀 How to Run
+
+1. **Clone the repository**
+2. **Compile the project**  
+   - Java SDK used: *Amazon Corretto 21.0.3*
+3. **Run the `Main` class** alongside the game: [La Palabra del Día](https://lapalabradeldia.com/)
+4. **Choose your strategy**
+   - Keep in mind: the Random Strategy is just for fun.
+5. **Enter feedback for each guess**  
+   - Use `v` for green (correct letter & position)  
+   - Use `a` for yellow (correct letter, wrong position)  
+   - Use `g` for gray (incorrect letter)
+
+---
+
+Enjoy solving Wordle the smart way in Spanish! 🇪🇸
